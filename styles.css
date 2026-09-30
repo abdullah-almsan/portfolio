@@ -1396,14 +1396,6 @@ html[dir="rtl"] .contact-card strong[dir="ltr"] { text-align: end; }
   .project-cover-orb{width:148px;height:148px;inset-inline-end:10px;top:-54px;box-shadow:0 0 42px rgba(139,92,246,.10)}
 }
 
-/* mobile project-cover correction: remove the clipped decorative block seen on phone Safari */
-@media (max-width:620px){
-  .project-cover{
-    background:linear-gradient(145deg,rgba(139,92,246,.10) 0%,rgba(24,24,27,.965) 42%,rgba(9,9,11,.99) 100%);
-  }
-  .project-cover-orb{display:none!important}
-}
-
 
 /* 2026-09-30 iOS Safari mobile project-card compositing fix.
    The motion pseudo-layer + zero-degree 3D transform can be tiled as a solid vertical block
@@ -1429,9 +1421,8 @@ html[dir="rtl"] .contact-card strong[dir="ltr"] { text-align: end; }
   }
 }
 
-/* 2026-09-30 iPhone Safari: force the project cover to span the card.
-   Safari can resolve aspect-ratio + max-height on a flex child from the height,
-   leaving a ~267px-wide cover inside a wider mobile card. */
+/* 2026-09-30 iPhone Safari/phone width fix without changing the desktop card look.
+   Keep the same visual card language on mobile, but force the cover to span the full card width. */
 @media (max-width: 820px) {
   .project-card > .project-cover {
     width: 100% !important;
@@ -1439,18 +1430,56 @@ html[dir="rtl"] .contact-card strong[dir="ltr"] { text-align: end; }
     min-width: 100% !important;
     align-self: stretch !important;
     box-sizing: border-box !important;
+    flex: 0 0 auto !important;
     aspect-ratio: auto !important;
-    height: 138px !important;
-    min-height: 138px !important;
-    max-height: 138px !important;
-    flex: 0 0 138px !important;
+    height: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+    padding: 18px !important;
+    background: linear-gradient(145deg, rgba(139,92,246,.20), rgba(24,24,27,.92) 52%, rgba(9,9,11,.98)) !important;
+  }
+  .project-card > .project-cover .project-cover-orb {
+    display: block !important;
+    width: 180px !important;
+    height: 180px !important;
+    top: -74px !important;
+    inset-inline-end: -46px !important;
+    border: 1px solid rgba(167,139,250,.24) !important;
+    box-shadow: 0 0 70px rgba(139,92,246,.13) !important;
+    opacity: 1 !important;
+  }
+}
+@media (max-width: 620px) {
+  .project-card > .project-cover {
+    height: 146px !important;
+    min-height: 146px !important;
+    max-height: 146px !important;
+    padding: 16px !important;
+  }
+  .project-card > .project-cover .project-cover-icon--splunk {
+    width: 72px !important;
+    height: 28px !important;
+    max-width: 72px !important;
+  }
+  .project-card > .project-cover .project-cover-orb {
+    width: 160px !important;
+    height: 160px !important;
+    top: -62px !important;
+    inset-inline-end: -34px !important;
+    box-shadow: 0 0 56px rgba(139,92,246,.12) !important;
   }
 }
 @media (max-width: 370px) {
   .project-card > .project-cover {
-    height: 132px !important;
-    min-height: 132px !important;
-    max-height: 132px !important;
-    flex-basis: 132px !important;
+    height: 138px !important;
+    min-height: 138px !important;
+    max-height: 138px !important;
+    padding: 15px !important;
+  }
+  .project-card > .project-cover .project-cover-orb {
+    width: 148px !important;
+    height: 148px !important;
+    top: -56px !important;
+    inset-inline-end: -28px !important;
   }
 }
