@@ -1391,4 +1391,7 @@ html[dir="rtl"] .contact-card strong[dir="ltr"] { text-align: end; }
 /* mobile/document polish: keep project tool marks fully visible and avoid duplicate project actions */
 .modal-links[hidden]{display:none!important}
 .project-cover-icon--splunk{width:78px!important;height:30px!important;max-width:78px!important;object-fit:contain!important}
-@media(max-width:620px){.project-cover-icon--splunk{width:72px!important;height:28px!important;max-width:72px!important}}
+@media(max-width:620px){
+  .project-cover-icon--splunk{width:72px!important;height:28px!important;max-width:72px!important}
+  .project-cover-orb{width:148px;height:148px;inset-inline-end:10px;top:-54px;box-shadow:0 0 42px rgba(139,92,246,.10)}
+}

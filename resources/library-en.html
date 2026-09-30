@@ -29,9 +29,18 @@ html,body,[data-scroll-root]{scrollbar-width:none!important;-ms-overflow-style:n
 .port-index th,.port-service{white-space:nowrap;word-break:keep-all}
 .port-index-wrap{overscroll-behavior-x:contain}
 @media(max-width:580px){
-  .port-index table{min-width:430px}
+  .port-index-wrap{overflow-x:hidden}
+  .port-index table{width:100%;min-width:0;table-layout:fixed}
+  .port-index th,.port-index td{padding:8px 6px}
+  .port-index th:nth-child(1),.port-index td:nth-child(1){width:47%}
+  .port-index th:nth-child(2),.port-index td:nth-child(2){width:35%}
+  .port-index th:nth-child(3),.port-index td:nth-child(3){width:18%}
+  .port-pills{gap:4px;justify-content:flex-start}
+  .port-pill{min-width:38px;padding-inline:6px}
+  .port-service{white-space:normal;word-break:normal;overflow-wrap:anywhere;line-height:1.35}
   .topic[data-port]{padding-top:12px}
-  .topic[data-port] .route-badge{position:static;align-self:flex-start;max-width:100%;white-space:normal;overflow:visible;text-overflow:clip;direction:ltr;unicode-bidi:isolate;text-align:left;line-height:1.35}
+  .topic[data-port]::before{display:none}
+  .topic[data-port] .route-badge{position:static;display:block;align-self:stretch;width:100%;max-width:100%;white-space:normal;overflow:visible;text-overflow:clip;direction:ltr;unicode-bidi:isolate;text-align:center;line-height:1.35;overflow-wrap:anywhere}
 }
 </style>
 </head>
