@@ -1395,3 +1395,11 @@ html[dir="rtl"] .contact-card strong[dir="ltr"] { text-align: end; }
   .project-cover-icon--splunk{width:72px!important;height:28px!important;max-width:72px!important}
   .project-cover-orb{width:148px;height:148px;inset-inline-end:10px;top:-54px;box-shadow:0 0 42px rgba(139,92,246,.10)}
 }
+
+/* mobile project-cover correction: remove the clipped decorative block seen on phone Safari */
+@media (max-width:620px){
+  .project-cover{
+    background:linear-gradient(145deg,rgba(139,92,246,.10) 0%,rgba(24,24,27,.965) 42%,rgba(9,9,11,.99) 100%);
+  }
+  .project-cover-orb{display:none!important}
+}
