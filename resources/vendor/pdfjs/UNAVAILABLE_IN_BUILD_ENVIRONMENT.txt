@@ -1,0 +1,1 @@
+PDF.js could not be vendored during this build because the execution environment blocked external package/CDN downloads and the internal npm install timed out. This file intentionally does not masquerade as PDF.js or its license.

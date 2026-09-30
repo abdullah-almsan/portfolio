@@ -1,0 +1,23 @@
+EXAMPLE ONLY — replace every EXAMPLE value with the real eJPTv2 (INE) credential data after you earn it.
+
+1) Put the real logo/image files in assets/certificates/pro/.
+2) In assets/data/certificates-data.js, add this object inside PRO_CERTS:
+
+{
+  id: 'EXAMPLE-ejptv2',
+  logo: 'assets/certificates/pro/EXAMPLE-ine-logo.png',
+  title: { ar: 'EXAMPLE — eJPTv2', en: 'EXAMPLE — eJPTv2' },
+  issuer: 'EXAMPLE — INE',
+  date: 'EXAMPLE-YYYY-MM-DD',
+  credentialUrl: 'EXAMPLE-https://...',
+  credentialId: 'EXAMPLE-CREDENTIAL-ID',
+  image: 'assets/certificates/pro/EXAMPLE-ejptv2-certificate.jpg'
+}
+
+When the credential is real, also update these manually if applicable:
+- About text on the portfolio.
+- “Currently learning / أتعلمه حاليًا” list.
+- CV / Resume.
+- LinkedIn profile.
+
+Do not publish the EXAMPLE object or EXAMPLE assets as a real credential.

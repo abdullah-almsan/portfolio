@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('portfolio-lang');
+        var lang = saved === 'ar' || saved === 'en' ? saved : 'en';
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      } catch (_) {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c10">
+  <meta name="color-scheme" content="dark">
+  <title>Abdullah Nasser AlMsan — Computer Systems Technician → SOC / Blue Team</title>
+  <meta name="description" content="Portfolio of Abdullah Nasser AlMsan — Computer Systems Technician building a focused path toward SOC Analyst / Blue Team through practical security projects and labs.">
+  <meta property="og:title" content="Abdullah Nasser AlMsan — Computer Systems Technician → SOC / Blue Team">
+  <meta property="og:description" content="Computer Systems Technician building a focused SOC / Blue Team path through practical security projects and labs.">
+  <meta property="og:image" content="https://abdullah-almsan.github.io/portfolio/assets/ui/social-preview.png">
+  <meta property="og:url" content="https://abdullah-almsan.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Abdullah AlMsan Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abdullah Nasser AlMsan — Computer Systems Technician → SOC / Blue Team">
+  <meta name="twitter:description" content="Computer Systems Technician building a focused SOC / Blue Team path through practical security projects and labs.">
+  <meta name="twitter:image" content="https://abdullah-almsan.github.io/portfolio/assets/ui/social-preview.png">
+  <link rel="canonical" href="https://abdullah-almsan.github.io/portfolio/">
+  <link rel="icon" type="image/svg+xml" href="assets/ui/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    if (location.protocol === 'https:' && !/^(localhost|127\.0\.0\.1)$/i.test(location.hostname)) {
+      const fontLink = document.createElement('link');
+      fontLink.rel = 'stylesheet';
+      fontLink.href = 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap';
+      document.head.appendChild(fontLink);
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent" id="skipLink">تجاوز إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="shell nav-row">
+      <a class="brand" href="#home" aria-label="عبدالله المسن — الرئيسية">
+        <span>Abdullah AlMsan</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي"></nav>
+      <div class="nav-actions">
+        <button class="lang-btn" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="فتح قائمة التنقل" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section class="hero section" id="home" aria-labelledby="heroName">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow" id="heroRole"></p>
+          <h1 id="heroName"></h1>
+          <p class="hero-message" id="heroMessage"></p>
+          <p class="hero-location"><span class="hero-saudi-brand"><span id="heroSaudiBrand"></span><img class="hero-location-icon" src="assets/ui/saudi-mark-gold.png" alt="" aria-hidden="true"></span><span id="heroLocation"></span></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact" id="contactCta"></a>
+            <button class="btn btn-secondary" type="button" id="cvCta"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="shell">
+        <header class="section-heading motion-heading">
+          <p class="section-label" id="aboutLabel"></p>
+          <h2 id="aboutTitle"></h2>
+        </header>
+        <div class="about-stage">
+          <div class="about-orbit" aria-hidden="true"></div>
+          <span class="floating-tag floating-tag--one" id="aboutFloatOne" aria-hidden="true"></span>
+          <span class="floating-tag floating-tag--two" id="aboutFloatTwo" aria-hidden="true"></span>
+          <span class="floating-tag floating-tag--three" id="aboutFloatThree" aria-hidden="true"></span>
+          <article class="about-motion-card motion-card">
+            <span class="motion-card-index" aria-hidden="true">01 / PROFILE</span>
+            <p class="about-text" id="aboutText"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" id="skills" aria-labelledby="skillsTitle">
+      <div class="shell">
+        <header class="section-heading compact-heading">
+          <p class="section-label" id="skillsLabel"></p>
+          <h2 id="skillsTitle"></h2>
+          <p id="skillsIntro"></p>
+        </header>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="certifications" aria-labelledby="certTitle">
+      <div class="shell">
+        <header class="section-heading compact-heading">
+          <p class="section-label" id="certLabel"></p>
+          <h2 id="certTitle"></h2>
+          <p id="certIntro"></p>
+        </header>
+        <div class="pro-certs" id="proCerts"></div>
+        <div class="cert-strip" id="certStrip"></div>
+        <a class="text-link section-link" href="certificates.html" id="allCertsLink"></a>
+      </div>
+    </section>
+
+    <section class="section section-tinted" id="projects" aria-labelledby="projectsTitle">
+      <div class="shell">
+        <header class="section-heading compact-heading">
+          <p class="section-label" id="projectsLabel"></p>
+          <h2 id="projectsTitle"></h2>
+          <p id="projectsIntro"></p>
+        </header>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="additional-work" aria-labelledby="additionalTitle">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <p class="section-label" id="additionalLabel"></p>
+          <h2 id="additionalTitle"></h2>
+          <p id="additionalIntro"></p>
+        </header>
+        <div class="additional-list" id="additionalList"></div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" id="education-experience" aria-labelledby="timelineTitle">
+      <div class="shell">
+        <header class="section-heading compact-heading">
+          <p class="section-label" id="timelineLabel"></p>
+          <h2 id="timelineTitle"></h2>
+          <p id="timelineIntro"></p>
+        </header>
+        <div class="career-columns">
+          <section class="career-panel career-panel--education" aria-labelledby="educationColumnTitle">
+            <header class="career-panel-head">
+              <div class="career-panel-title">
+                <span class="career-panel-icon" aria-hidden="true" id="educationColumnIcon"></span>
+                <h3 id="educationColumnTitle"></h3>
+              </div>
+            </header>
+            <div class="career-list career-list--education" id="educationTimeline"></div>
+            <div class="recommendations" id="recommendations"></div>
+          </section>
+
+          <section class="career-panel career-panel--experience" aria-labelledby="experienceColumnTitle">
+            <header class="career-panel-head">
+              <div class="career-panel-title">
+                <span class="career-panel-icon" aria-hidden="true" id="experienceColumnIcon"></span>
+                <h3 id="experienceColumnTitle"></h3>
+              </div>
+              <p class="career-panel-note" id="experienceScope"></p>
+            </header>
+            <div class="career-list career-list--work" id="experienceTimeline"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources" aria-labelledby="resourcesTitle">
+      <div class="shell">
+        <header class="section-heading compact-heading resources-heading">
+          <p class="section-label" id="resourcesLabel"></p>
+          <h2 id="resourcesTitle"></h2>
+        </header>
+        <div class="resource-card">
+          <div>
+            <h3 id="resourceCardTitle"></h3>
+            <p id="resourceCardText"></p>
+          </div>
+          <div class="resource-actions">
+            <a class="btn btn-secondary" id="libraryLink" href="resources/library.html"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tinted contact-section" id="contact" aria-labelledby="contactTitle">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <p class="section-label" id="contactLabel"></p>
+          <h2 id="contactTitle"></h2>
+          <p id="contactIntro"></p>
+        </header>
+        <div class="contact-grid" id="contactGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <span id="footerName"></span>
+      <span id="footerYear"></span>
+    </div>
+  </footer>
+
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <span class="modal-status" id="modalStatus"></span>
+          <h2 id="modalTitle"></h2>
+        </div>
+        <button class="modal-close" id="modalClose" type="button" aria-label="إغلاق">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="tag-list" id="modalTags"></div>
+        <div class="modal-details" id="modalDetails"></div>
+        <div class="modal-gallery-wrap">
+          <h3 id="modalEvidenceTitle"></h3>
+          <div class="modal-gallery" id="modalGallery"></div>
+        </div>
+        <div class="modal-links" id="modalLinks"></div>
+      </div>
+    </article>
+  </div>
+
+
+  <div class="modal cv-modal" id="cvModal" aria-hidden="true">
+    <div class="cv-modal-panel" role="dialog" aria-modal="true" aria-label="Resume / CV">
+      <iframe class="cv-frame" id="cvFrame" title="CV preview" loading="eager"></iframe>
+    </div>
+  </div>
+
+  <div class="modal doc-modal" id="docModal" aria-hidden="true">
+    <div class="doc-modal-panel" role="dialog" aria-modal="true" aria-label="Document preview">
+      <iframe class="doc-frame" id="docFrame" title="Document preview" loading="eager"></iframe>
+    </div>
+  </div>
+
+  <script src="resources/cv-download-payloads.js"></script>
+  <script src="resources/download-payloads.js"></script>
+  <script src="assets/data/certificates-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

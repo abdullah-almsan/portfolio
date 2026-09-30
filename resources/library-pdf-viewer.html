@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Library PDF Viewer</title>
+<style>
+:root{--bg:#09090d;--panel:#111118;--panel2:#171721;--text:#f7f5ff;--muted:#aaa5ba;--line:#2b2938;--accent:#9b73ff;--page-width:920px}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}button,a{font:inherit}.bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-bottom:1px solid var(--line);background:rgba(9,9,13,.94);backdrop-filter:blur(12px)}.doc-title{min-width:0;display:flex;align-items:center;gap:9px;font-weight:800;font-size:14px}.doc-title span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.badge{flex:0 0 auto;padding:4px 7px;border:1px solid rgba(155,115,255,.35);border-radius:999px;color:#c7b4ff;font-size:10px;letter-spacing:.06em}.controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}.control,.download{height:34px;min-width:36px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0 10px;font-weight:750;cursor:pointer;text-decoration:none}.control:hover,.download:hover{border-color:rgba(155,115,255,.55);background:var(--panel2)}.percent{min-width:56px;color:#d7d2e5}.pages{padding:18px 12px 42px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;overflow:auto;direction:ltr}.page{display:block;width:var(--page-width);height:auto;margin-inline:auto;max-width:none;box-shadow:0 16px 48px rgba(0,0,0,.35);background:#fff;border-radius:3px}.loading{padding:70px 18px;text-align:center;color:var(--muted)}.error{max-width:720px;margin:40px auto;padding:18px;border:1px solid #5f3340;border-radius:14px;background:#1b1015;color:#f3c0ca}.sep{width:1px;height:22px;background:var(--line);margin:0 2px}@media(max-width:680px){.bar{align-items:flex-start;flex-direction:column}.controls{width:100%;justify-content:flex-start}.doc-title{width:100%}.download{margin-inline-start:auto}}@media(pointer:coarse){.control,.download{min-height:44px;height:44px}.control{min-width:44px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+<script src="library-pdf-data.js"></script>
+<script src="library-notice.js" data-library-direct></script>
+<link rel="icon" type="image/svg+xml" href="../assets/ui/logo.svg">
+</head>
+<body>
+<header class="bar">
+  <div class="doc-title"><span class="badge" id="docBadge">PDF</span><span id="docTitle">Reference</span></div>
+  <div class="controls" aria-label="Document controls">
+    <button class="control" id="zoomOut" type="button" aria-label="Zoom out">−</button>
+    <button class="control percent" id="zoomReset" type="button">100%</button>
+    <button class="control" id="zoomIn" type="button" aria-label="Zoom in">+</button>
+    <button class="control" id="fitBtn" type="button">Fit</button>
+    <span class="sep" aria-hidden="true"></span>
+    <a class="download" id="downloadBtn" data-library-pdf-download download>Download ↓</a>
+  </div>
+</header>
+<main class="pages" id="pages"><div class="loading" id="loading">Loading preview…</div></main>
+<script>
+(function(){
+'use strict';
+const params=new URLSearchParams(location.search);
+const lang=params.get('lang')==='ar'?'ar':'en';
+const id=(params.get('id')||'').padStart(2,'0');
+const title=params.get('title')|| (lang==='ar'?'مرجع المكتبة':'Library reference');
+const data=window.LIBRARY_PDF_DATA?.[lang]?.[id];
+document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.title=title;
+document.getElementById('docTitle').textContent=title;
+document.getElementById('downloadBtn').textContent=lang==='ar'?'تنزيل PDF ↓':'Download PDF ↓';
+document.getElementById('fitBtn').textContent=lang==='ar'?'ملاءمة':'Fit';
+const host=document.getElementById('pages');
+if(!data){host.innerHTML=`<div class="error">${lang==='ar'?'تعذر العثور على المستند المطلوب.':'The requested document could not be found.'}</div>`;return;}
+const dl=document.getElementById('downloadBtn');dl.href=data.file;dl.setAttribute('download',data.file.split('/').pop());
+host.replaceChildren();
+data.pages.forEach((src,i)=>{const img=document.createElement('img');img.className='page';img.src=src;img.alt=(lang==='ar'?`صفحة ${i+1} من ${data.pages.length}`:`Page ${i+1} of ${data.pages.length}`);img.loading=i<2?'eager':'lazy';img.decoding='async';host.appendChild(img)});
+let zoom=1;const pct=document.getElementById('zoomReset');
+function fitWidth(){const cs=getComputedStyle(host);const pad=(parseFloat(cs.paddingLeft)||0)+(parseFloat(cs.paddingRight)||0);return Math.min(920,Math.max(1,host.clientWidth-pad))}
+function apply(){const width=fitWidth()*zoom;document.documentElement.style.setProperty('--page-width',`${width.toFixed(2)}px`);pct.textContent=Math.round(zoom*100)+'%';return width}
+document.getElementById('zoomOut').onclick=()=>{zoom=Math.max(.45,zoom-.1);apply()};
+document.getElementById('zoomIn').onclick=()=>{zoom=Math.min(1.8,zoom+.1);apply()};
+pct.onclick=()=>{zoom=1;apply();host.scrollLeft=0};
+document.getElementById('fitBtn').onclick=()=>{zoom=1;apply();host.scrollLeft=0;window.scrollTo({top:0,behavior:'smooth'})};
+window.addEventListener('resize',apply);window.addEventListener('orientationchange',apply);
+apply();
+})();
+</script>
+</body>
+</html>

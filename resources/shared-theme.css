@@ -1,0 +1,72 @@
+:root{
+  --bg:#09090b!important;
+  --panel:#111113!important;
+  --panel-2:#18181b!important;
+  --card:#111113!important;
+  --surface:#111113!important;
+  --surface-2:#18181b!important;
+  --border:#29292f!important;
+  --line:#29292f!important;
+  --text:#f4f4f5!important;
+  --text-dim:#a1a1aa!important;
+  --muted:#a1a1aa!important;
+  --faint:#85858f!important;
+  --accent:#8b5cf6!important;
+  --accent-2:#a78bfa!important;
+  --accent-dim:#7c3aed!important;
+  --yellow:#a78bfa!important;
+  --mono:#c4b5fd!important;
+  --green:#86efac!important;
+  --red:#fb7185!important;
+}
+*{box-sizing:border-box;min-width:0}
+html,body{max-width:100%;background:var(--bg)!important;color:var(--text)!important}
+body{font-family:"IBM Plex Sans","IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif!important;text-align:start}
+html[lang="ar"] body{font-size:106%;line-height:1.9}
+html[lang="ar"] *{letter-spacing:0!important;text-transform:none!important}
+code,pre,.cmd,.result,.mono,.ltr,[dir="ltr"]{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Consolas,monospace}
+code,pre,.cmd{direction:ltr!important;text-align:left!important;max-width:100%;overflow-x:auto}
+table{max-width:100%}
+th,td{overflow-wrap:anywhere}
+.step-title,.note,.tip,.danger,.result,.desc,.where{overflow-wrap:anywhere;min-width:0}
+.wrap,.shell,.container,main,section,article,.stage,.step,.grid2,.topics,.topic{min-width:0;max-width:100%}
+img,svg,video,canvas{max-width:100%}
+a{overflow-wrap:anywhere}
+html[dir="rtl"] body{direction:rtl;text-align:start}
+html[dir="ltr"] body{direction:ltr;text-align:start}
+html[lang="ar"] :is(code,pre,.cmd,.result,.mono,.ltr,[dir="ltr"]){direction:ltr!important;text-align:left!important;unicode-bidi:isolate}
+html[lang="ar"] :is(h1,h2,h3,h4,p,li,span,a,button,div){text-align:start}
+
+.card,.stage,.topic,.purpose,.safety-note,.library-viewer-panel,.ai-program-panel,.ai-day,.ai-gallery figure{border-color:var(--line)!important;background-color:var(--surface)!important}
+.filter,.controls button,.controls a,.bar button{border-color:var(--line)!important;background:var(--surface-2)!important;color:var(--text)!important}
+.filter.active{border-color:var(--accent)!important;background:rgba(139,92,246,.11)!important;color:var(--accent-2)!important}
+.eyebrow,.tag,.meta a,.open-cert,.inside-viewer-note,.author,h3.sub,.purpose h2,.toc .ttl,.portnote b,.note b{color:var(--accent-2)!important}
+.meta p,.ai-program-supervisor,.ai-day p,.ai-gallery figcaption,.hero p{color:var(--muted)!important}
+
+body.pdf-viewer-body,body.image-viewer-body{height:100vh;height:100dvh;overflow:hidden}
+.library-viewer,.cert-lightbox,.ai-program-modal{min-height:100vh;min-height:100dvh}
+
+@media(max-width:640px){
+  body{overflow-x:hidden!important}
+  .wrap,.shell{width:100%!important;max-width:100%!important;padding-inline:14px!important;margin-inline:auto!important}
+  .stage,.purpose,.safety-note,.topic{padding-inline:12px!important}
+  .grid2,.topics{grid-template-columns:minmax(0,1fr)!important}
+  .grid2,.grid2>*,.topics,.topics>*{min-width:0!important}
+  .step-title,.note,.tip,.danger,.result,.desc,.stage .desc,.where,.toc,.portnote,footer{overflow-wrap:anywhere!important;word-break:break-word;min-width:0!important}
+  .cmd,pre{max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  table{display:block;max-width:100%;overflow-x:auto}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+body.recommendation-viewer-body{height:100vh;height:100dvh;overflow:hidden}
+.library-viewer-panel{height:min(94vh,900px)!important;height:min(94dvh,900px)!important}
+.cert-lightbox-inner{height:min(88vh,900px)!important;height:min(88dvh,900px)!important}
+.card,.topic,.purpose,.safety-note,.ai-day,.ai-gallery figure{border-radius:14px!important}
+
+
+/* cloud-p1-mobile-readable */
+@media(max-width:600px){
+  html,body{overflow-x:hidden!important}
+  table{display:block!important;width:100%!important;max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  pre,.cmd{max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  p,li,a,span,small,code,pre,td,th,label,button,.hero .tag,.signature,.stage .desc,.where,.cmd,.note,.tip,.danger,.result,.toc,.portnote,.badge,footer,footer .author,footer .disclaimer{font-size:max(14px,1em)!important}
+}
