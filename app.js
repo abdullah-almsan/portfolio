@@ -996,7 +996,7 @@ const COPY = {
     aboutText: 'بعد تخرجي بدبلوم أمن المعلومات، بدأت مسيرتي العملية بصفتي فني نظم حاسب آلي، وأواصل حاليًا دراسة بكالوريوس تقنية المعلومات كتخصص منفصل وموازٍ. ومع اهتمامي بالأمن السيبراني، أطبّق ما أتعلمه عبر تحليل الشبكات والسجلات والمختبرات العملية.',
     skillsLabel: 'المهارات', skillsTitle: 'الأساس العملي والأدوات', skillsIntro: 'خبرة عملية في الدعم التقني، تحليل الشبكات والسجلات، وأدوات الأمن المستخدمة في المختبرات.',
     currentLearning: 'أتعلمه حاليًا',
-    certLabel: 'الدورات', certTitle: 'الدورات وورش التدريب', certIntro: 'شهادات لورش ودورات تدريبية.', certStatus: 'دورة / تدريب', allCerts: n => `عرض كل الدورات (${n})`, proTitle: 'شهادة مهنية معتمدة',
+    certLabel: 'الدورات', certTitle: 'الدورات وورش التدريب', certIntro: 'شهادات لورش ودورات تدريبية.', certStatus: 'دورة تدريب', allCerts: n => `عرض كل الدورات (${n})`, proTitle: 'شهادة مهنية معتمدة',
     projectsLabel: 'المشاريع', contributionLabel: 'مساهمتي', projectsTitle: 'دراسات حالة SOC / Blue Team', projectsIntro: 'دراسات حالة عملية في تحليل الشبكات والسجلات والتحقيق وبناء التنبيهات الأمنية.', viewCase: 'عرض دراسة الحالة',
     additionalLabel: 'مشاريع إضافية', additionalTitle: 'أدوات طورتها', additionalIntro: 'أدوات ومشاريع إضافية طورتها لدعم التعلم والعمل التقني.', viewDetails: 'عرض التفاصيل',
     timelineLabel: 'التعليم والخبرة', timelineTitle: 'التعليم والخبرة التقنية', timelineIntro: 'المؤهلات الأكاديمية والخبرة العملية المرتبطة بمساري التقني.', educationColumnTitle: 'التعليم', experienceColumnTitle: 'الخبرة التقنية', experienceScope: 'يعرض هذا القسم الخبرة المرتبطة بمساري التقني فقط؛ بقية الخبرات العملية خارج المجال موثقة بالتفصيل داخل السيرة الذاتية.', recommendations: 'خطابات أكاديمية من دراسة الدبلوم', viewRecommendation: 'استعراض خطاب', viewCertificate: 'عرض الوثيقة',
@@ -1173,7 +1173,7 @@ function renderProfessionalCertRows(copy) {
 }
 
 const CERT_TYPE_LABELS = {
-  ar: { credential: 'اعتماد بعد اختبار', training: 'دورة / تدريب', attendance: 'حضور' },
+  ar: { credential: 'اعتماد بعد اختبار', training: 'دورة تدريب', attendance: 'حضور' },
   en: { credential: 'Exam-based credential', training: 'Course / Training', attendance: 'Attendance' }
 };
 function certificateTypeBadge(cert) {
@@ -1185,7 +1185,7 @@ function projectCover(id, title) {
   const tool = id === 'soc-network-traffic'
     ? { label: 'Wireshark', icon: 'assets/brands/wireshark.svg' }
     : { label: 'Splunk', icon: 'assets/brands/splunk.svg' };
-  return `<div class="project-cover" aria-label="${esc(title)}"><span class="project-cover-orb" aria-hidden="true"></span><img class="project-cover-icon" src="${tool.icon}" alt="" loading="lazy"><span class="project-cover-tool">${esc(tool.label)}</span><h3>${esc(title)}</h3></div>`;
+  return `<div class="project-cover" aria-label="${esc(title)}"><span class="project-cover-orb" aria-hidden="true"></span><img class="project-cover-icon project-cover-icon--${tool.label.toLowerCase()}" src="${tool.icon}" alt="" loading="lazy"><span class="project-cover-tool">${esc(tool.label)}</span><h3>${esc(title)}</h3></div>`;
 }
 
 function renderCertifications(copy) {
@@ -1374,14 +1374,18 @@ function projectLinkMarkup(project, copy) {
 
 function syncProjectQuickActions(projectId = $('projectModal')?.dataset.projectId) {
   const quick = $('modalQuickLinks');
-  if (!quick) return;
+  const regular = $('modalLinks');
+  if (!quick || !regular) return;
   const mobile = window.matchMedia('(max-width: 620px)').matches;
-  quick.hidden = !(mobile && MOBILE_QUICK_ACTION_PROJECTS.has(projectId) && quick.childElementCount);
+  const useQuick = Boolean(mobile && MOBILE_QUICK_ACTION_PROJECTS.has(projectId) && quick.childElementCount);
+  quick.hidden = !useQuick;
+  regular.hidden = useQuick;
 }
 
 function renderProjectLinks(project, copy) {
   const markup = projectLinkMarkup(project, copy);
   $('modalLinks').innerHTML = markup;
+  $('modalLinks').hidden = false;
   let quick = $('modalQuickLinks');
   if (!quick) {
     quick = document.createElement('div');

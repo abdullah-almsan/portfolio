@@ -3,8 +3,8 @@
   /* CV download registry. SHA-256 values are regenerated from the real PDFs by assets/cv-source/generate_cv.py. */
   const FILES=Object.create(null);
   [
-    ["assets/Abdullah_Nasser_AlMsan_CV_EN.pdf","application/pdf","1cb21b3faa78248d3c27f727c32d73b43f6bf2a9a84b633ec632e5203330e8d1"],
-    ["assets/Abdullah_Nasser_AlMsan_CV_AR.pdf","application/pdf","02d3a8c352175e29fff4569cccbd56e68966fcfbffdf81bd363e373c8a986571"]
+    ["assets/Abdullah_Nasser_AlMsan_CV_EN.pdf","application/pdf","f9f14160276525b9ed18b2603d13c2b72909b665e5b625a646d48999fdd707cd"],
+    ["assets/Abdullah_Nasser_AlMsan_CV_AR.pdf","application/pdf","d29e7b22ed8b93e87b788516c303dcba562c0cc63a982b2c383e6eccac65262e"]
   ].forEach(function(e){FILES[e[0]]={name:e[0].split('/').pop(),mime:e[1],sha256:e[2]};});
   function keyFrom(input){
     let s=String(input||'').replace(/\\/g,'/').split(/[?#]/)[0];

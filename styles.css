@@ -1387,3 +1387,8 @@ html[dir="rtl"] .contact-card strong[dir="ltr"] { text-align: end; }
 .cert-item{height:auto;min-height:96px}
 .project-card{max-height:none}
 @media(min-width:901px) and (max-width:1200px){.skills-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* mobile/document polish: keep project tool marks fully visible and avoid duplicate project actions */
+.modal-links[hidden]{display:none!important}
+.project-cover-icon--splunk{width:78px!important;height:30px!important;max-width:78px!important;object-fit:contain!important}
+@media(max-width:620px){.project-cover-icon--splunk{width:72px!important;height:28px!important;max-width:72px!important}}
