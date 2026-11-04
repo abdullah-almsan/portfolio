@@ -35,7 +35,7 @@
 
   <link rel="canonical" href="https://abdullah-almsan.github.io/portfolio/">
   <link rel="icon" type="image/svg+xml" href="assets/ui/logo.svg">
-  <link rel="stylesheet" href="styles.css?v=20261104-ejpt-verified">
+  <link rel="stylesheet" href="styles.css?v=20261104-ejpt-v8">
 
   <script>
     if (location.protocol === 'https:' && !/^(localhost|127\.0\.0\.1)$/i.test(location.hostname)) {
@@ -135,7 +135,20 @@
           <p id="certIntro"></p>
         </header>
 
-        <div class="pro-certs" id="proCerts"></div>
+        <section class="ejpt-pro-area" id="professional-certification" aria-label="eJPT professional certification">
+  <h3 class="ejpt-pro-area__heading"><span class="ejpt-en">Professional Certification</span><span class="ejpt-ar">الشهادات الاحترافية</span></h3>
+  <div class="ejpt-pro-area__grid">
+    <a class="cert-item ejpt-pro-card" href="certification-ejpt.html?from=portfolio" aria-label="View eJPT professional certification">
+      <span class="cert-thumb"><img src="assets/certificates/pro/INE_eJPT_badge.webp" alt="eJPT by INE Security" width="120" height="144" loading="lazy"></span>
+      <span class="cert-copy">
+        <strong>eJPT — Junior Penetration Tester</strong>
+        <span class="cert-type cert-type--credential"><span class="ejpt-en">Exam-based certification</span><span class="ejpt-ar">شهادة احترافية بعد اختبار</span></span>
+        <span class="cert-issuer">INE Security</span>
+        <small><span class="ejpt-en">Issued: November 2026 · View details ↗</span><span class="ejpt-ar">الإصدار: نوفمبر 2026 · عرض التفاصيل ↗</span></small>
+      </span>
+    </a>
+  </div>
+</section>
         <div class="cert-strip" id="certStrip"></div>
 
         <a class="text-link section-link" href="certificates.html" id="allCertsLink"></a>
@@ -284,7 +297,7 @@
 
   <script src="resources/cv-download-payloads.js"></script>
   <script src="resources/download-payloads.js"></script>
-  <script src="assets/data/certificates-data.js"></script>
-  <script src="app.js"></script>
+  <script src="assets/data/certificates-data.js?v=20261104-ejpt-v8"></script>
+  <script src="app.js?v=20261104-ejpt-v8"></script>
 </body>
 </html>

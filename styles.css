@@ -1496,3 +1496,45 @@ html[dir="rtl"] .contact-card strong[dir="ltr"] { text-align: end; }
 .pro-cert-actions a{font-size:.81rem;font-weight:750;color:var(--accent);text-underline-offset:3px}
 .pro-cert-actions a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media(max-width:460px){.pro-cert-row--featured{grid-template-columns:68px minmax(0,1fr);gap:10px;padding:12px}.pro-cert-row--featured img{width:62px;height:68px}.pro-cert-actions{gap:10px}}
+
+/* V8 — one professional certification: balanced layout and correct bilingual copy. */
+.ejpt-pro-area{margin:0 0 30px}
+.ejpt-pro-area__heading{font-size:1.13rem;font-weight:800;margin:0 0 13px;color:var(--text)}
+.ejpt-pro-area__grid{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;gap:12px}
+.ejpt-pro-card{
+  display:flex!important;align-items:center;gap:18px;
+  width:min(100%,660px);max-width:660px;min-height:162px;
+  padding:17px 20px!important;border:1px solid rgba(167,139,250,.30)!important;
+  border-radius:20px!important;
+  background:linear-gradient(110deg,rgba(122,72,191,.17),rgba(22,20,30,.96))!important;
+  color:#f7f4ff!important;text-decoration:none!important;
+  transition:transform .16s ease,border-color .16s ease;
+}
+.ejpt-pro-card:hover{border-color:rgba(178,139,252,.66)!important;transform:translateY(-2px)}
+.ejpt-pro-card .cert-thumb{
+  flex:0 0 104px;width:104px!important;height:124px!important;max-width:104px;
+  padding:0!important;min-width:0!important;margin:0!important;
+  display:block;overflow:hidden;border-radius:13px!important;
+  background:#3c174c!important;border:1px solid rgba(210,174,255,.22)!important;
+}
+.ejpt-pro-card .cert-thumb img{
+  display:block;width:100%!important;height:100%!important;max-width:none!important;
+  object-fit:cover!important;object-position:center!important;background:transparent!important;
+  border-radius:0!important;
+}
+.ejpt-pro-card .cert-copy{display:flex;flex:1;flex-direction:column;justify-content:center;align-items:flex-start;min-width:0;gap:7px;padding:0!important;text-align:start}
+.ejpt-pro-card .cert-copy strong{font-size:clamp(1rem,1.45vw,1.15rem);line-height:1.35;overflow-wrap:anywhere}
+.ejpt-pro-card .cert-copy .cert-type{display:inline-flex;font-size:.74rem;line-height:1.25}
+.ejpt-pro-card .cert-copy .cert-issuer,.ejpt-pro-card .cert-copy small{font-size:.78rem;color:#bfb8d0;line-height:1.45}
+.ejpt-pro-area .ejpt-ar{display:none!important}
+html[lang="ar"] .ejpt-pro-area .ejpt-ar{display:inline!important}
+html[lang="ar"] .ejpt-pro-area .ejpt-en{display:none!important}
+html[lang="en"] .ejpt-pro-area .ejpt-en{display:inline!important}
+html[lang="en"] .ejpt-pro-area .ejpt-ar{display:none!important}
+@media(max-width:570px){
+  .ejpt-pro-card{min-height:136px;padding:12px!important;gap:12px;border-radius:15px!important}
+  .ejpt-pro-card .cert-thumb{flex-basis:78px;width:78px!important;max-width:78px;height:94px!important}
+  .ejpt-pro-card .cert-copy{gap:5px}
+  .ejpt-pro-card .cert-copy strong{font-size:.94rem}
+  .ejpt-pro-card .cert-copy small{font-size:.73rem}
+}

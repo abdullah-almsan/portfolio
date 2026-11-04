@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+<title id="title">CompTIA Security Plus</title>
+<desc id="desc">Security Plus badge styled to match the portfolio theme.</desc>
+<defs>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#f5f3ff"/>
+    <stop offset="100%" stop-color="#c4b5fd"/>
+  </linearGradient>
+</defs>
+<rect x="8" y="8" width="112" height="112" rx="28" fill="none" stroke="rgba(255,255,255,0.16)"/>
+<circle cx="64" cy="58" r="34" fill="none" stroke="url(#g1)" stroke-width="5" opacity="0.95"/>
+<path d="M64 38c8 6 17 7 17 7v16c0 13-8 21-17 25-9-4-17-12-17-25V45s9-1 17-7Z" fill="none" stroke="url(#g1)" stroke-width="4.5" stroke-linejoin="round"/>
+<path d="M64 50v15M57 58h14" stroke="url(#g1)" stroke-width="4.5" stroke-linecap="round"/>
+<text x="64" y="26" text-anchor="middle" fill="#f5f3ff" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">CompTIA</text>
+<text x="64" y="106" text-anchor="middle" fill="#f5f3ff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">Security+</text>
+</svg>

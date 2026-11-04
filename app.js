@@ -954,10 +954,10 @@ const DATA={
       "title": {"ar": "أتعلمه حاليًا", "en": "Current Learning"},
       "learning": true,
       "items": [
-        {"ar":"تطبيق عملي لاختبار الاختراق ضمن مختبرات محاكاة","en":"Applied penetration testing in simulated labs"},
-        {"ar":"تعمّق في أدوات المختبر (Nmap، Metasploit، Burp Suite)","en":"Going deeper with lab tools (Nmap, Metasploit, Burp Suite)"},
-        {"ar":"توثيق الثغرات وكتابة تقارير فنية","en":"Vulnerability documentation & technical reporting"},
-        {"ar":"eJPT — معتمد من INE، نوفمبر 2026","en":"eJPT — INE Certified, November 2026"}
+        {"ar":"CompTIA Security+ (SY0-701) — قيد التحضير","en":"CompTIA Security+ (SY0-701) — In progress"},
+        {"ar":"التهديدات والثغرات وطرق الحد من المخاطر","en":"Threats, vulnerabilities, and risk mitigation"},
+        {"ar":"هندسة الأمن وإدارة الهوية والصلاحيات","en":"Security architecture and IAM fundamentals"},
+        {"ar":"العمليات الأمنية والاستجابة للحوادث","en":"Security operations and incident response"}
       ]
     }
   ],
@@ -996,7 +996,7 @@ const COPY = {
     aboutText: 'بعد حصولي على دبلوم أمن المعلومات، بدأت عملي بصفتي فني نظم حاسب آلي، وأواصل دراسة بكالوريوس تقنية المعلومات. حصلت على شهادة eJPT من INE في نوفمبر 2026. وأطوّر مهاراتي في الأمن السيبراني من خلال مشاريع تحليل الشبكات والسجلات والمختبرات العملية.',
     skillsLabel: 'المهارات', skillsTitle: 'الأساس العملي والأدوات', skillsIntro: 'خبرة عملية في الدعم التقني، تحليل الشبكات والسجلات، وأدوات الأمن المستخدمة في المختبرات.',
     currentLearning: 'أتعلمه حاليًا',
-    certLabel: 'الاعتمادات والتدريب', certTitle: 'الشهادات المهنية والدورات', certIntro: 'شهادة eJPT المهنية المعتمدة مستقلة عن شهادات حضور الدورات وورش التدريب.', certStatus: 'دورة تدريب', allCerts: n => `عرض كل الدورات (${n})`, proTitle: 'الشهادات المهنية المعتمدة — اختبارات احترافية',
+    certLabel: 'الاعتمادات والتدريب', certTitle: 'الشهادات المهنية والدورات', certIntro: 'شهادة eJPT المهنية المعتمدة مستقلة عن شهادات حضور الدورات وورش التدريب.', certStatus: 'دورة تدريب', allCerts: () => `عرض جميع الشهادات والدورات · شهادة احترافية واحدة و22 دورة`, proTitle: 'الشهادات المهنية المعتمدة — اختبارات احترافية',
     projectsLabel: 'المشاريع', contributionLabel: 'مساهمتي', projectsTitle: 'دراسات حالة SOC / Blue Team', projectsIntro: 'دراسات حالة عملية في تحليل الشبكات والسجلات والتحقيق وبناء التنبيهات الأمنية.', viewCase: 'عرض دراسة الحالة',
     additionalLabel: 'مشاريع إضافية', additionalTitle: 'أدوات طورتها', additionalIntro: 'أدوات ومشاريع إضافية طورتها لدعم التعلم والعمل التقني.', viewDetails: 'عرض التفاصيل',
     timelineLabel: 'التعليم والخبرة', timelineTitle: 'التعليم والخبرة التقنية', timelineIntro: 'المؤهلات الأكاديمية والخبرة العملية المرتبطة بمساري التقني.', educationColumnTitle: 'التعليم', experienceColumnTitle: 'الخبرة التقنية', experienceScope: 'يعرض هذا القسم الخبرة المرتبطة بمساري التقني فقط؛ بقية الخبرات العملية خارج المجال موثقة بالتفصيل داخل السيرة الذاتية.', recommendations: 'خطابات أكاديمية من دراسة الدبلوم', viewRecommendation: 'استعراض خطاب', viewCertificate: 'عرض الوثيقة',
@@ -1019,7 +1019,7 @@ const COPY = {
     aboutText: 'With a Diploma in Information Security, I work as a Computer Systems Technician while pursuing a Bachelor’s degree in Information Technology. I earned the eJPT certification from INE in November 2026 and continue building cybersecurity skills through practical network and log-analysis projects.',
     skillsLabel: 'Skills', skillsTitle: 'Practical foundation & tools', skillsIntro: 'Hands-on experience across IT support, network and log analysis, and security tools used in practical labs.',
     currentLearning: 'Currently learning',
-    certLabel: 'Credentials & Training', certTitle: 'Professional Certifications & Training', certIntro: 'Exam-based professional credentials are listed separately from courses, workshops and attendance certificates.', certStatus: 'Course / Training', allCerts: n => `View all courses (${n})`, proTitle: 'Professional Certifications — Exam-Based Credentials',
+    certLabel: 'Credentials & Training', certTitle: 'Professional Certifications & Training', certIntro: 'Exam-based professional credentials are listed separately from courses, workshops and attendance certificates.', certStatus: 'Course / Training', allCerts: () => `View all certifications and courses · 1 professional credential, 22 courses`, proTitle: 'Professional Certifications — Exam-Based Credentials',
     projectsLabel: 'Projects', contributionLabel: 'My contribution', projectsTitle: 'SOC / Blue Team case studies', projectsIntro: 'Hands-on case studies in network and log analysis, investigation, and security alerting.', viewCase: 'View case study',
     additionalLabel: 'Additional Work', additionalTitle: 'Tools I built', additionalIntro: 'Additional tools and projects I built to support practical learning and technical work.', viewDetails: 'View details',
     timelineLabel: 'Education & Experience', timelineTitle: 'Education & technical experience', timelineIntro: 'Academic qualifications and practical experience related to my technical path.', educationColumnTitle: 'Education', experienceColumnTitle: 'Technical Experience', experienceScope: 'This section shows only experience relevant to my technical path; additional work experience outside the field is documented in detail in my CV.', recommendations: 'Academic letters from my diploma studies', viewRecommendation: 'View letter', viewCertificate: 'View document',
@@ -1137,9 +1137,9 @@ function renderSkills(copy) {
       { label: 'Nmap', icon: 'assets/brands/nmap.svg' }
     ],
     [
-      { label: 'eJPT', icon: 'assets/brands/ejpt.png' },
+      { label: 'Security+', icon: 'assets/brands/comptia-securityplus-from-official.png' },
       { label: 'Labs', icon: 'assets/brands/labs.svg' },
-      { label: 'Reports', icon: 'assets/brands/reports.svg' }
+      { label: 'Notes', icon: 'assets/brands/reports.svg' }
     ]
   ];
   $('skillsGrid').innerHTML = cards.map(({ group, index }) => {
@@ -1336,7 +1336,7 @@ function render() {
   setText('skillsLabel', copy.skillsLabel); setText('skillsTitle', copy.skillsTitle); setText('skillsIntro', copy.skillsIntro);
   renderSkills(copy);
 
-  setText('certLabel', copy.certLabel); setText('certTitle', copy.certTitle); setText('certIntro', copy.certIntro); $('allCertsLink').innerHTML = actionContent('external-link', copy.allCerts((window.CERTIFICATES || []).length)); $('allCertsLink').href = `certificates.html?lang=${lang}&from=certifications`; 
+  setText('certLabel', copy.certLabel); setText('certTitle', copy.certTitle); setText('certIntro', copy.certIntro); $(`allCertsLink`).innerHTML = actionContent('external-link', copy.allCerts()); $('allCertsLink').href = `certificates.html?lang=${lang}&from=certifications`; 
   renderCertifications(copy);
 
   setText('projectsLabel', copy.projectsLabel); setText('projectsTitle', copy.projectsTitle); setText('projectsIntro', copy.projectsIntro);
