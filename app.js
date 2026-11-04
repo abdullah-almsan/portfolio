@@ -957,7 +957,7 @@ const DATA={
         {"ar":"تطبيق عملي لاختبار الاختراق ضمن مختبرات محاكاة","en":"Applied penetration testing in simulated labs"},
         {"ar":"تعمّق في أدوات المختبر (Nmap، Metasploit، Burp Suite)","en":"Going deeper with lab tools (Nmap, Metasploit, Burp Suite)"},
         {"ar":"توثيق الثغرات وكتابة تقارير فنية","en":"Vulnerability documentation & technical reporting"},
-        {"ar":"eJPT — قيد التحضير، متوقع نوفمبر 2026","en":"eJPT — In progress, expected November 2026"}
+        {"ar":"eJPT — معتمد من INE، نوفمبر 2026","en":"eJPT — INE Certified, November 2026"}
       ]
     }
   ],
@@ -985,18 +985,18 @@ const DATA={
 const COPY = {
   ar: {
     nav: [
-      ['about', 'نبذة'], ['skills', 'المهارات'], ['certifications', 'الدورات'], ['projects', 'المشاريع'],
+      ['about', 'نبذة'], ['skills', 'المهارات'], ['certifications', 'الشهادات والدورات'], ['projects', 'المشاريع'],
       ['education-experience', 'التعليم والخبرة'], ['resources', 'المصادر'], ['contact', 'تواصل']
     ],
     skip: 'تجاوز إلى المحتوى',
-    role: 'فني نظم حاسب آلي <span aria-hidden="true">←</span> أطمح لمسار <bdi dir="ltr">SOC / Blue Team</bdi>',
+    role: '<bdi dir="ltr">eJPT Certified · INE</bdi> <span aria-hidden="true">·</span> فني نظم حاسب آلي <span aria-hidden="true">←</span> <bdi dir="ltr">SOC / Blue Team</bdi>',
     message: 'أطوّر خبرتي في الدعم التقني عبر تطبيقات عملية في <bdi dir="ltr">SOC / Blue Team</bdi> ضمن مساري الأمني.',
     contactCta: 'تواصل معي', cvCta: 'معاينة السيرة الذاتية', saudiBrand: 'سعودي',
     aboutLabel: 'نبذة', aboutTitle: 'من أنا؟',
-    aboutText: 'بعد تخرجي بدبلوم أمن المعلومات، بدأت مسيرتي العملية بصفتي فني نظم حاسب آلي، وأواصل حاليًا دراسة بكالوريوس تقنية المعلومات كتخصص منفصل وموازٍ. ومع اهتمامي بالأمن السيبراني، أطبّق ما أتعلمه عبر تحليل الشبكات والسجلات والمختبرات العملية.',
+    aboutText: 'بعد حصولي على دبلوم أمن المعلومات، بدأت عملي بصفتي فني نظم حاسب آلي، وأواصل دراسة بكالوريوس تقنية المعلومات. حصلت على شهادة eJPT من INE في نوفمبر 2026. وأطوّر مهاراتي في الأمن السيبراني من خلال مشاريع تحليل الشبكات والسجلات والمختبرات العملية.',
     skillsLabel: 'المهارات', skillsTitle: 'الأساس العملي والأدوات', skillsIntro: 'خبرة عملية في الدعم التقني، تحليل الشبكات والسجلات، وأدوات الأمن المستخدمة في المختبرات.',
     currentLearning: 'أتعلمه حاليًا',
-    certLabel: 'الدورات', certTitle: 'الدورات وورش التدريب', certIntro: 'شهادات لورش ودورات تدريبية.', certStatus: 'دورة تدريب', allCerts: n => `عرض كل الدورات (${n})`, proTitle: 'شهادة مهنية معتمدة',
+    certLabel: 'الاعتمادات والتدريب', certTitle: 'الشهادات المهنية والدورات', certIntro: 'شهادة eJPT المهنية المعتمدة مستقلة عن شهادات حضور الدورات وورش التدريب.', certStatus: 'دورة تدريب', allCerts: n => `عرض كل الدورات (${n})`, proTitle: 'الشهادات المهنية المعتمدة — اختبارات احترافية',
     projectsLabel: 'المشاريع', contributionLabel: 'مساهمتي', projectsTitle: 'دراسات حالة SOC / Blue Team', projectsIntro: 'دراسات حالة عملية في تحليل الشبكات والسجلات والتحقيق وبناء التنبيهات الأمنية.', viewCase: 'عرض دراسة الحالة',
     additionalLabel: 'مشاريع إضافية', additionalTitle: 'أدوات طورتها', additionalIntro: 'أدوات ومشاريع إضافية طورتها لدعم التعلم والعمل التقني.', viewDetails: 'عرض التفاصيل',
     timelineLabel: 'التعليم والخبرة', timelineTitle: 'التعليم والخبرة التقنية', timelineIntro: 'المؤهلات الأكاديمية والخبرة العملية المرتبطة بمساري التقني.', educationColumnTitle: 'التعليم', experienceColumnTitle: 'الخبرة التقنية', experienceScope: 'يعرض هذا القسم الخبرة المرتبطة بمساري التقني فقط؛ بقية الخبرات العملية خارج المجال موثقة بالتفصيل داخل السيرة الذاتية.', recommendations: 'خطابات أكاديمية من دراسة الدبلوم', viewRecommendation: 'استعراض خطاب', viewCertificate: 'عرض الوثيقة',
@@ -1008,18 +1008,18 @@ const COPY = {
   },
   en: {
     nav: [
-      ['about', 'About'], ['skills', 'Skills'], ['certifications', 'Courses'], ['projects', 'Projects'],
+      ['about', 'About'], ['skills', 'Skills'], ['certifications', 'Certifications'], ['projects', 'Projects'],
       ['education-experience', 'Education & Experience'], ['resources', 'Resources'], ['contact', 'Contact']
     ],
     skip: 'Skip to content',
-    role: 'Computer Systems Technician → Aspiring SOC Analyst / Blue Team',
+    role: 'eJPT Certified (INE) · Computer Systems Technician → SOC / Blue Team',
     message: 'I build on my IT support experience through hands-on practice in SOC and Blue Team work.',
     contactCta: 'Contact me', cvCta: 'Preview Resume', saudiBrand: 'Saudi',
     aboutLabel: 'About', aboutTitle: 'About Me',
-    aboutText: 'After graduating with a Diploma in Information Security, I began my hands-on career as a Computer Systems Technician. I am currently pursuing a Bachelor’s degree in Information Technology as a separate, parallel academic path. My interest in cybersecurity has led me to practice network and log analysis through hands-on labs.',
+    aboutText: 'With a Diploma in Information Security, I work as a Computer Systems Technician while pursuing a Bachelor’s degree in Information Technology. I earned the eJPT certification from INE in November 2026 and continue building cybersecurity skills through practical network and log-analysis projects.',
     skillsLabel: 'Skills', skillsTitle: 'Practical foundation & tools', skillsIntro: 'Hands-on experience across IT support, network and log analysis, and security tools used in practical labs.',
     currentLearning: 'Currently learning',
-    certLabel: 'Courses', certTitle: 'Courses & Training', certIntro: 'Certificates from workshops and training courses.', certStatus: 'Course / Training', allCerts: n => `View all courses (${n})`, proTitle: 'Professional certification',
+    certLabel: 'Credentials & Training', certTitle: 'Professional Certifications & Training', certIntro: 'Exam-based professional credentials are listed separately from courses, workshops and attendance certificates.', certStatus: 'Course / Training', allCerts: n => `View all courses (${n})`, proTitle: 'Professional Certifications — Exam-Based Credentials',
     projectsLabel: 'Projects', contributionLabel: 'My contribution', projectsTitle: 'SOC / Blue Team case studies', projectsIntro: 'Hands-on case studies in network and log analysis, investigation, and security alerting.', viewCase: 'View case study',
     additionalLabel: 'Additional Work', additionalTitle: 'Tools I built', additionalIntro: 'Additional tools and projects I built to support practical learning and technical work.', viewDetails: 'View details',
     timelineLabel: 'Education & Experience', timelineTitle: 'Education & technical experience', timelineIntro: 'Academic qualifications and practical experience related to my technical path.', educationColumnTitle: 'Education', experienceColumnTitle: 'Technical Experience', experienceScope: 'This section shows only experience relevant to my technical path; additional work experience outside the field is documented in detail in my CV.', recommendations: 'Academic letters from my diploma studies', viewRecommendation: 'View letter', viewCertificate: 'View document',
@@ -1164,11 +1164,15 @@ function renderProfessionalCertRows(copy) {
   if (!items.length) { host.replaceChildren(); host.hidden = true; return; }
   host.hidden = false;
   host.innerHTML = `<h3 class="pro-certs-title">${esc(copy.proTitle)}</h3><div class="pro-certs-list">${items.map(cert => {
-    const date = cert.date ? `<span>${esc(cert.date)}</span>` : '';
-    const credential = cert.credentialUrl ? `<a class="pro-cert-verify" href="${esc(cert.credentialUrl)}" target="_blank" rel="noopener noreferrer">${lang === 'ar' ? 'تحقق' : 'Verify'}</a>` : '';
-    const id = cert.credentialId ? `<span>${esc(cert.credentialId)}</span>` : '';
-    const visual = cert.logo || cert.image;
-    return `<article class="pro-cert-row">${visual ? `<img src="${esc(visual)}" alt="" loading="lazy">` : ''}<div><strong>${esc(t(cert.title))}</strong><span>${esc(cert.issuer || '')}</span><small>${[date,id,credential].filter(Boolean).join(' · ')}</small></div></article>`;
+    const details = lang === 'ar' ? 'أُصدرت: 4 نوفمبر 2026 · صالحة حتى 4 نوفمبر 2029' : 'Issued: 4 Nov 2026 · Expires: 4 Nov 2029';
+    const visual = cert.image || cert.logo;
+    const page = cert.pageUrl || '#certifications';
+    return `<article class="pro-cert-row pro-cert-row--featured">
+      ${visual ? `<a class="pro-cert-visual" href="${esc(page)}?lang=${lang}" aria-label="${esc(t(cert.title))}"><img src="${esc(visual)}" alt="eJPT badge" loading="lazy"></a>` : ''}
+      <div class="pro-cert-info"><strong>${esc(t(cert.title))}</strong><span>${esc(cert.issuer || '')} · ${esc(details)}</span>
+      <small>${lang === 'ar' ? 'رقم الاعتماد' : 'Credential ID'}: ${esc(cert.credentialId||'')}</small>
+      <div class="pro-cert-actions"><a href="${esc(page)}?lang=${lang}">${lang === 'ar' ? 'عرض الشهادة' : 'View Certificate'}</a><a href="${esc(cert.credentialUrl)}" target="_blank" rel="noopener noreferrer">${lang === 'ar' ? 'التحقق من INE ↗' : 'Verify with INE ↗'}</a></div></div>
+    </article>`;
   }).join('')}</div>`;
 }
 

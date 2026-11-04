@@ -28,7 +28,17 @@
     {id:'doroob-it-intro',type:'training',file:'08.jpg',title:{ar:'تعرف على أساسيات الحاسب الآلي',en:'Introduction in the Information Technology'},issuer:'Doroob',issuerKey:'doroob',field:'it',fields:['it'],sub:null,hours:null,date:'2023-06-06',priority:22,featured:false}
   ];
 
-  const PRO_CERTS = [];
+  const PRO_CERTS = [{
+    id:'ine-ejpt-2026',
+    title:{ar:'eJPT — اختبار الاختراق للمبتدئين',en:'eJPT — Junior Penetration Tester'},
+    issuer:'INE Security',
+    date:'2026-11-04',
+    expires:'2029-11-04',
+    credentialId:'199310718',
+    credentialUrl:'https://certs.ine.com/9cd1f66c-58c5-4d48-bbf5-14e4cfeb93f0',
+    pageUrl:'certification-ejpt.html',
+    image:'assets/certificates/pro/INE_eJPT_badge.webp'
+  }];
 
   global.CERTIFICATES = CERTIFICATES;
   global.PRO_CERTS = PRO_CERTS;
